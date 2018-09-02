@@ -1,0 +1,67 @@
+{% load static %}
+<html>
+    <header>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/ranker.css' %}" />
+        <meta charset="utf-8">
+        <h1>SPOJ Ranker</h1>
+    </header>
+    <body>
+        <div id="main">
+            <article>
+                    <table class="table table-bordered" style="color: white;">
+                        <tbody>
+                            <tr>
+                                <td>Handle</td>
+                                <td>{{ db_handle.handle_name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>{{ db_handle.user_name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Location</td>
+                                <td>{{ db_handle.user_location }}</td>
+                            </tr>
+                            <tr>
+                                <td>Joined SPOJ</td>
+                                <td>{{ db_handle.joining_date }}</td>
+                            </tr>
+                            <tr>
+                                <td>World Rank</td>
+                                <td>{{ db_handle.world_rank }}</td>
+                            </tr>
+                            <tr>
+                                <td>Points</td>
+                                <td>{{ db_handle.points }}</td>
+                            </tr>
+                            <tr>
+                                <td>Institution</td>
+                                <td>{{ db_handle.institution }}</td>
+                            </tr>
+                            <tr>
+                                <td>Problems Solved</td>
+                                <td>{{ db_handle.problems_solved }}</td>
+                            </tr>
+                            <tr>
+                                <td>Total Submissions</td>
+                                <td>{{ db_handle.total_submissions }}</td>
+                            </tr>
+                            <tr>
+                                <td>Added On</td>
+                                <td>{{ db_handle.added_on }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="{% url 'home_view' %}">
+                        <button type="button" class="btn btn-primary" type="submit">
+                            <i class="fa fa-paper-plane" aria-hidden="true"></i> Home
+                        </button>
+                    </a>
+            </article>
+        </div>
+        <footer><h4>Made by Anmol Deep</h4></footer>
+    </body>
+</html>

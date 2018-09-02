@@ -1,0 +1,47 @@
+{% load static %}
+<html>
+    <header>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/ranker.css' %}" />
+        <meta charset="utf-8">
+        <h1>SPOJ Ranker</h1>
+    </header>
+    <body>
+        <div id="main">
+            <form method="POST" action="{% url 'home_view' %}">
+            {% csrf_token %}
+                <article>
+                    <p>For creating new handles: </p> 
+                    {{ form.handle_name }}
+                </article>
+                <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i> Submit</button>
+            </form>
+            <table class="table table-bordered" style="color: white;">
+                {% for x in handles %}
+                    <tr>
+                        <td>{{ x.handle_name }}</td>
+                        <td>{{ x.world_rank }}</td>
+                        <td>{{ x.points }}</td>
+                        <td>
+                            <a href="{% url 'delete_handle' pk=x.pk %}">
+                                <button type="button" class="btn btn-danger" type="submit">
+                                    <i class="fa fa-trash" aria-hidden="true"></i> Remove
+                                </button>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{% url 'detailed_view' pk=x.pk %}">
+                                <button type="button" class="btn btn-primary">
+                                    <i class="fa fa-info-circle" aria-hidden="true"></i> Details
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <footer><h4>Made by Anmol Deep</h4></footer>
+    </body>
+</html>
