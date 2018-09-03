@@ -6,6 +6,7 @@
 * pip
 * requests (Run pip install requests)
 * bs4 (Beautiful Soup, Run pip install bs4)
+* Django 2.0.6
 
 ## Usage
 * Clone this repository.
