@@ -14,4 +14,4 @@
 * Run python manage.py migrate
 * Run python manage.py runserver
 
-This will serve your django application at localost:8000 by default.
+This will serve your django application at localhost:8000 by default.
