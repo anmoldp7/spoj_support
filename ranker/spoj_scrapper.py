@@ -64,5 +64,3 @@ class spoj_crawler:
             stats_marks = stats_marks.find_all("dd")
             self.problems_solved = stats_marks[0].text
             self.solutions_submitted = stats_marks[1].text
-            problems_solved = self.problems_solved # Remove this
-            solutions_submitted = self.solutions_submitted # Remove this
